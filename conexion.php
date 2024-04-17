@@ -1,22 +1,35 @@
-<?php
-// Datos de conexión a la base de datos
-$servername = "192.168.14.80"; // Cambia "localhost" por la dirección del servidor de tu base de datos
-$username = "jhon"; // Cambia "usuario" por tu nombre de usuario de MySQL
-$password = "UnivalleTulua2023**"; // Cambia "contraseña" por tu contraseña de MySQL
-$database = "bdcontrolasistenciasalas"; // Cambia "nombre_base_de_datos" por el nombre de tu base de datos
+<?php     
 
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $database);
+class Conexion{
 
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-} else {
-    echo "Conexión exitosa";
-    // Aquí puedes realizar consultas, inserciones, actualizaciones, etc.
+    private $server = "mysql:host=192.168.14.80;dbname=bdcontrolasistenciasalas";
+	private $username = "jhon";
+	private $password = "UnivalleTulua2023**";
+	private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
+	protected $conn;
+ 	
+	public function open(){
+ 		try{
+ 			$this->conn = new PDO($this->server, $this->username, $this->password, $this->options);
+            echo "Conexion exitosa";
+ 			return $this->conn;
+ 		}
+ 		catch (PDOException $e){
+ 			echo "Ocurrió un problema con la conexión: " . $e->getMessage();
+ 		}
+ 
+    }
+ 
+	public function close(){
+   		$this->conn = null;
+        echo "Desconexion exitosa";
+ 	}
 }
-
-// Cerrar conexión
-$conn->close();
+/*
+$prueba = new Conexion();
+$prueba->open();
+echo "\n";
+$prueba->close();
+*/
 
 ?>
