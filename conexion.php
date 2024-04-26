@@ -25,6 +25,7 @@ class Conexion{
         echo "Desconexion exitosa";
  	}
 }
+
 /*
 $prueba = new Conexion();
 $prueba->open();
