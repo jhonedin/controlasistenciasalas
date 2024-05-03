@@ -36,7 +36,8 @@ class EstudianteModel extends Conexion {
                 echo "\n";
                 echo "Metodo Hash Estudiante:". " " . $fila['metodo_hash'];
                 echo "\n";
-                echo "Clave Estudiante:". " " . $fila['clave'];                  
+                echo "Clave Estudiante:". " " . $fila['clave'];     
+                echo "\n";             
             }
             return $resultado;
         } else {
