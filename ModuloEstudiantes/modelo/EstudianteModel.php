@@ -41,6 +41,7 @@ class EstudianteModel extends Conexion {
             return $resultado;
         } else {
             echo " No se encontraron resultados.";
+            return null; 
         }  
     }
 
