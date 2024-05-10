@@ -1,8 +1,12 @@
 <?php     
 
 class Conexion{
-
+	/*
     private $server = "mysql:host=192.168.14.80;dbname=bdcontrolasistenciasalas";
+	private $username = "jhon";
+	private $password = "UnivalleTulua2023**";
+	*/
+	private $server = "mysql:host=127.0.0.1;dbname=bdcontrolasistenciasalas";
 	private $username = "jhon";
 	private $password = "UnivalleTulua2023**";
 	private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
