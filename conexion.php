@@ -30,11 +30,11 @@ class Conexion{
  	}
 }
 
-/*
+
 $prueba = new Conexion();
 $prueba->open();
 echo "\n";
 $prueba->close();
-*/
+
 
 ?>
